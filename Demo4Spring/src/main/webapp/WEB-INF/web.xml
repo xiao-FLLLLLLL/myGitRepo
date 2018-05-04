@@ -22,6 +22,16 @@
         <!--<url-pattern> 是指访问 Servlet 的相对 URL 路径。根据该属性，访问 mvc-dispatcher 的 URL 为： http://localhost:8080/， mvc-dispatcher 接收到客户请求后，再把请求转发给相应的 .jsp 并生成页面。-->
     </servlet-mapping>
 
+
+    <servlet>
+        <servlet-name>my-servlet</servlet-name>
+        <servlet-class>controller.MyController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>my-servlet</servlet-name>
+        <url-pattern>/myController</url-pattern>
+    </servlet-mapping>
     <!--Spring 框架给我们提供过滤器 CharacterEncodingFilter
   这个过滤器就是针对于每次浏览器请求进行过滤的，然后再其之上添加了父类没有的功能即处理字符编码。
   其中encoding用来设置编码格式，forceEncoding 用来设置是否理会 request.getCharacterEncoding()方法，设置为 true 则强制覆盖之前的编码格式。-->
